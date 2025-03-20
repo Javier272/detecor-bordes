@@ -34,3 +34,7 @@ contornos,jerarquia=cv2.findContours(bordes,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_S
 #Dibujar contornos
 imagen_contornos=np.zeros_like(imagen)
 cv2.drawContours(imagen_contornos,contornos,-1,(0,255,0),2)
+
+#Contador de contornos
+numero_objetos=len(contornos)
+print("Numero de objetos encontrados:",numero_objetos)
