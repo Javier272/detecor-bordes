@@ -22,3 +22,15 @@ gradiente=cv2.magnitude(xsoble,ysobel)
 
 #Normaliza el gradiente
 normalizado_gradiente=np.uint8(255*(gradiente/np.max(gradiente)))
+
+#Detectar los bordes con canny
+bordes=cv2.Canny(normalizado_gradiente,50,200)
+
+
+#Detecta contornos de la imagen
+contornos,jerarquia=cv2.findContours(bordes,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+
+
+#Dibujar contornos
+imagen_contornos=np.zeros_like(imagen)
+cv2.drawContours(imagen_contornos,contornos,-1,(0,255,0),2)
