@@ -9,7 +9,7 @@ Cuenta con tres procesos de filtrado que son los siguientes:
 
 Escala gris: Convierte a escala de grises para quitar ruido y facilitar el procesamiento.
 
-Soblel: Detecta el contorno de los objetos. Calcula  las derivadas en la dirección X,Y
+Sobel: Detecta el contorno de los objetos. Calcula  las derivadas en la dirección X,Y
 
 Canny: Refina los contornos, optimiza los umbrales y elimina el ruido
 
