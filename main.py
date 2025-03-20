@@ -35,6 +35,31 @@ contornos,jerarquia=cv2.findContours(bordes,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_S
 imagen_contornos=np.zeros_like(imagen)
 cv2.drawContours(imagen_contornos,contornos,-1,(0,255,0),2)
 
+
 #Contador de contornos
 numero_objetos=len(contornos)
 print("Numero de objetos encontrados:",numero_objetos)
+
+
+#Imprime las imagenes la imagen con contornos
+plt.figure(figsize=(12, 6))
+
+plt.subplot(1, 3, 1)
+plt.imshow(imagen_gris, cmap="gray")
+plt.title("Imagen Original")
+plt.axis("off")
+
+plt.subplot(1, 3, 2)
+plt.imshow(normalizado_gradiente, cmap="gray")
+plt.title("Filtro Sobel")
+plt.axis("off")
+
+
+
+plt.subplot(1, 3, 3)
+plt.imshow(imagen_contornos, cmap="gray")
+plt.title("Contornos Detectados")
+plt.axis("off")
+
+plt.show()
+
